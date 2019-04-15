@@ -75,7 +75,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 powerline-daemon -q
 source $HOME/.config/zsh/powerline.zsh
-export POWERLINE_CONFIG_COMMAND=/usr/bin/powerline-config
+export POWERLINE_CONFIG_COMMAND=$HOME/.config/zsh/powerline-config
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOCONNECT=true
 
