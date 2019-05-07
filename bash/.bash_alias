@@ -1,0 +1,2 @@
+alias work='cd $HOME/Workspace'
+alias cat='/usr/bin/bat'
