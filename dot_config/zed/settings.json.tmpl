@@ -1,0 +1,300 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "edit_predictions": {
+    "provider": "zed"
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "prettier": {
+    "allowed": true
+  },
+  "terminal": {
+    "detect_venv": {
+      "on": {
+        // Default directories to search for virtual environments, relative
+        // to the current working directory. We recommend overriding this
+        // in your project's settings, rather than globally.
+        "directories": [
+          ".env",
+          "env",
+          ".venv",
+          "venv",
+          "**/*/venv",
+          "**/*/.venv",
+          "**/**/*/.venv"
+        ],
+        // Can also be `csh`, `fish`, and `nushell`
+        "activate_script": "fish"
+      }
+    }
+  },
+  "show_completions_on_input": true,
+  "context_servers": {
+    "memory-server": {
+      "enabled": true,
+      "command": "memory-mcp-server",
+      "args": [],
+      "env": {
+        "MEMORY_FILE_PATH": "~/.local/cache/memory.json"
+      }
+    },
+    "aws.dp-mcp": {
+      "enabled": true,
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-dataprocessing-mcp-server@latest",
+        "--allow-write"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_REGION": "eu-central-1"
+      }
+    },
+    "mcp-server-grafana": {
+      "enabled": true,
+      "settings": {}
+    },
+    "mcp-server-linear": {
+      "enabled": true,
+      "settings": {}
+    },
+    "mcp-server-slack": {
+      "enabled": true,
+      "settings": {}
+    },
+    "mcp-server-exa-search": {
+      "enabled": true,
+      "settings": {
+        "exa_api_key": "{{ env "EXA_API_KEY" }}"
+      }
+    },
+    "terraform-context-server": {
+      "enabled": true,
+      "settings": {}
+    },
+    "mcp-server-context7": {
+      "enabled": true,
+      "settings": {
+        "context7_api_key": "{{ env "CONTEXT7_API_KEY" }}"
+      }
+    },
+    "github-activity-summarizer": {
+      "enabled": true,
+      "settings": {
+        "author": "Leonardo Pêpe",
+        "from_date": "1 week ago"
+      }
+    },
+    "mcp-server-github": {
+      "settings": {
+        "github_personal_access_token": "{{ env "GITHUB_ZED_PAT" }}"
+      }
+    }
+  },
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "agent": {
+    "tool_permissions": {
+      "default": "allow"
+    },
+    "favorite_models": [
+      {
+        "provider": "amazon-bedrock",
+        "model": "claude-opus-4-5-thinking",
+        "enable_thinking": false
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-sonnet-4.5",
+        "enable_thinking": false
+      },
+      {
+        "provider": "ollama",
+        "model": "deepseek-coder-v2:latest",
+        "enable_thinking": false
+      },
+      {
+        "provider": "ollama",
+        "model": "qwen3-coder",
+        "enable_thinking": false
+      },
+      {
+        "provider": "ollama",
+        "model": "deepseek-r1:latest",
+        "enable_thinking": false
+      },
+      {
+        "provider": "amazon-bedrock",
+        "model": "claude-sonnet-4-5-thinking",
+        "enable_thinking": false
+      },
+      {
+        "provider": "lmstudio",
+        "model": "google/gemma-3-4b",
+        "enable_thinking": false
+      }
+    ],
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
+    },
+    "default_model": {
+      "provider": "amazon-bedrock",
+      "model": "claude-sonnet-4-5-thinking"
+    },
+    "model_parameters": []
+  },
+  "languages": {
+    "Rust": {
+      "show_edit_predictions": true
+    },
+    "Python": {
+      "indent_guides": {
+        "background_coloring": "indent_aware"
+      },
+      "show_edit_predictions": true,
+      "language_servers": [
+        "ty"
+      ],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_action": "source.fixAll.ruff"
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "language_models": {
+    "openai_compatible": {
+      "vllm": {
+        "api_url": "https://localhost:11434",
+        "available_models": [
+          {
+            "name": "Mistral-7B-v0.1",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false
+            }
+          }
+        ]
+      }
+    },
+    "bedrock": {
+      "authentication_method": "named_profile",
+      "region": "eu-central-1",
+      "profile": "ai-coding.tools"
+    },
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "available_models": [
+        {
+          "name": "qwen3-coder",
+          "display_name": "qwen3-coder",
+          "max_tokens": 32768,
+          "supports_tools": true,
+          "supports_thinking": true,
+          "supports_images": true
+        },
+        {
+          "name": "deepseek-coder-v2",
+          "display_name": "deepseek-coder-v2",
+          "max_tokens": 16384
+        },
+        {
+          "name": "deepseek-r1",
+          "display_name": "deepseek-r1",
+          "max_tokens": 16384
+        }
+      ]
+    }
+  },
+  "theme": "Ayu Dark",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "enable_language_server": true,
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "imports": {
+          "granularity": {
+            "group": "module"
+          },
+          "prefix": "self"
+        },
+        "cargo": {
+          "buildScripts": {
+            "enable": true
+          }
+        },
+        "procMacro": {
+          "enable": true
+        },
+        "check": {
+          "command": "clippy"
+        },
+        "inlayHints": {
+          "maxLength": null,
+          "lifetimeElisionHints": {
+            "enable": "skip_trivial",
+            "useParameterNames": true
+          },
+          "closureReturnTypeHints": {
+            "enable": "always"
+          }
+        },
+        "diagnostics": {
+          "experimental": {
+            "enable": true
+          }
+        },
+        "checkOnSave": true
+      }
+    },
+    "terraform-ls": {
+      "initialization_options": {
+        "experimentalFeatures": {
+          "prefillRequiredFields": true
+        }
+      }
+    },
+    "typescript-language-server": {
+      "initialization_options": {
+        "preferences": {
+          "importModuleSpecifierPreference": "relative",
+          "includeInlayParameterNameHints": "all",
+          "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
+          "includeInlayFunctionParameterTypeHints": true,
+          "includeInlayVariableTypeHints": true,
+          "includeInlayVariableTypeHintsWhenTypeMatchesName": true,
+          "includeInlayPropertyDeclarationTypeHints": true,
+          "includeInlayFunctionLikeReturnTypeHints": true,
+          "includeInlayEnumMemberValueHints": true
+        }
+      }
+    }
+  },
+  "formatter": "language_server",
+  "git": {
+    "git_gutter": "tracked_files"
+  }
+}

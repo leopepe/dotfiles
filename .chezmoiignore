@@ -1,0 +1,29 @@
+# Sensitive / credential files - never sync these
+.config/aws-sso/**
+.config/gcloud/**
+.config/github-copilot/**
+.config/containers/**
+.config/op/**
+.config/gh/**
+.config/goose/**
+.config/mozilla/**
+.config/configstore/**
+
+# Large backup dirs
+.config/nvim_back/**
+
+# Machine-specific / binary state files
+.config/fish/fish_variables
+.config/ncspot/userstate.cbor
+
+# Zed AI data (not config)
+.config/zed/conversations/**
+.config/zed/embeddings/**
+.config/zed/settings_backup.json
+# Managed as a template (secrets removed) — see dot_config/zed/settings.json.tmpl
+.config/zed/settings.json
+# Binary / generated zed data
+.config/zed/prompts/**-library-db*/**
+
+# Generated caches
+.config/lvim/.ruff_cache/**

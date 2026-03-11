@@ -1,0 +1,10 @@
+font-family = "Hack"
+font-size = 14
+theme = Monokai Pro
+window-decoration = auto
+# Background image configuration
+background-image = /Users/leonardo.pepe/Pictures/AkiraDark.png
+background-image-opacity = 0.2
+background-image-position = center
+background-image-fit = cover
+background-image-repeat = false

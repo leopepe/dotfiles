@@ -1,0 +1,3 @@
+# artifactory
+set ARTIFACTORY_USER leonardo.pepe
+set ARTIFACTORY_APIKEY $(cat $HOME/.jfrog.apikey)
