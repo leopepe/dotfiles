@@ -1,0 +1,18 @@
+version = 2
+
+[common]
+synced_files = []
+
+[[profiles]]
+name = "Personal"
+synced_files = [
+    ".config/lvim/config.lua",
+    ".config/lvim/lua/go/config.lua",
+    ".config/lvim/lua/goose/options.lua",
+    ".config/lvim/lua/keybindings/options.lua",
+    ".config/lvim/lua/plugins/config.lua",
+    ".config/lvim/lua/python/config.lua",
+    ".config/lvim/lua/rust/config.lua",
+    ".config/lvim/lua/user/options.lua",
+]
+packages = []
