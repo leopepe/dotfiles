@@ -1,9 +1,0 @@
-[tools]
-go = "1.24"
-node = "24.1"
-python = "3.14"
-rust = "1.87"
-zig = "0.14"
-
-[settings]
-idiomatic_version_file_enable_tools = ["python"]
