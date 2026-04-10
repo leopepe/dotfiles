@@ -1,0 +1,26 @@
+# gitleaks configuration for dotfiles repo
+# Extends the default ruleset with dotfile-specific rules.
+# Docs: https://github.com/gitleaks/gitleaks
+
+title = "dotfiles gitleaks config"
+
+[extend]
+useDefault = true   # inherit all built-in rules (AWS, GH tokens, private keys, etc.)
+
+[[rules]]
+id          = "generic-api-key-assignment"
+description = "Generic API key or secret assigned in config"
+regex       = '''(?i)(api_?key|api_?secret|auth_?token|access_?token|client_?secret)\s*[=:]\s*["']?[A-Za-z0-9+/\-_]{16,}'''
+tags        = ["secret", "generic"]
+
+[[rules]]
+id          = "hardcoded-password"
+description = "Hardcoded password field"
+regex       = '''(?i)password\s*[=:]\s*["'][^"']{4,}["']'''
+tags        = ["secret", "password"]
+
+[allowlist]
+# Allow placeholder / example values
+regexes = [
+  '''(?i)(example|placeholder|your[_-]?key|changeme|todo|fixme|<.*?>)''',
+]

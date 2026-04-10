@@ -7,3 +7,34 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Credentials & secrets
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+id_rsa
+id_ed25519
+id_ecdsa
+.env
+.env.*
+!.env.example
+
+# AWS / cloud credentials
+.aws/credentials
+.aws/config
+credentials.json
+service_account*.json
+*-service-account.json
+
+# API key / token files
+*.token
+*_token.txt
+*apikey*
+*api_key*
+
+# Password manager / keychain files
+*.kdbx
+*.keychain
