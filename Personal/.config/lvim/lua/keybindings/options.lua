@@ -22,15 +22,17 @@ lvim.builtin.which_key.mappings["n"] = {
 
 lvim.builtin.which_key.mappings["a"] = {
   name = "+AI",
-  c = { "<cmd>CodeCompanionChat Toggle<cr>", "Toggle chat" },
-  a = { "<cmd>CodeCompanionActions<cr>", "Actions" },
-  i = { "<cmd>CodeCompanion<cr>", "Inline assistant" },
-  n = { "<cmd>CodeCompanionChat<cr>", "New chat" },
+  c = { "<cmd>ClaudeCode<cr>", "Toggle Claude" },
+  f = { "<cmd>ClaudeCodeFocus<cr>", "Focus Claude" },
+  r = { "<cmd>ClaudeCode --resume<cr>", "Resume Claude" },
+  b = { "<cmd>ClaudeCodeAdd %<cr>", "Add buffer to Claude" },
+  a = { "<cmd>ClaudeCodeDiffAccept<cr>", "Accept diff" },
+  d = { "<cmd>ClaudeCodeDiffDeny<cr>", "Deny diff" },
+  m = { "<cmd>ClaudeCodeSelectModel<cr>", "Select model" },
 }
 lvim.builtin.which_key.vmappings["a"] = {
   name = "+AI",
-  a = { "<cmd>CodeCompanionChat Add<cr>", "Add selection to chat" },
-  i = { "<cmd>CodeCompanion<cr>", "Inline assistant" },
+  s = { "<cmd>ClaudeCodeSend<cr>", "Send selection to Claude" },
 }
 -- Minuet manual completion trigger (insert mode)
 vim.keymap.set("i", "<C-y>", function()
